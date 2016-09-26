@@ -204,7 +204,7 @@ game_logic.prototype.apply_input = function(player, input){
 		//array log
 		//player.input_seq.end++;
 		//player.input_log[player.input_seq.end] = {angle: player.ball.angle, time: input.time, apply_time: 0, seq: player.input_seq.end, active : false};
-                this.socket.send(Date.now()+'');
+                this.socket.send('p-'+Date.now());
 		this.launch_ball(player);
 		player.ball.arrow.active = false;
 	}
