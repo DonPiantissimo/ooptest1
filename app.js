@@ -39,7 +39,9 @@ sio.sockets.on('connection', function(client){
     client.userid = UUID();
     client.emit('onconnected', {id:client.userid});
     console.log('connected');
+    var message = [];
     client.on('message', function(m){
-        console.log(Date.now()-parseFloat(m));
+	    message = m.split('-');
+        console.log(Date.now()-parseFloat(message[1]));
     });
 });
